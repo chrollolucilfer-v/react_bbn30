@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
 const App = () => {
-
-  let [counter, setCounter] = useState(0)
+  let [counter, setCounter] = useState(0);
 
   // let counter = 1; we don't need this if we have above code
 
@@ -10,23 +9,23 @@ const App = () => {
     console.log("Value Added", counter);
 
     counter = counter + 1;
-    setCounter(counter)
+    setCounter(counter);
   };
 
   const removeValue = () => {
     console.log("Value REmoved", counter);
-    counter -= 1;
-    setCounter(counter)
-
-
+    if (counter > 0) {
+      counter -= 1;
+    }
+    setCounter(counter); // this means tell me what new value to put
+    // or direct setCounter(counter +1)
   };
-  
-// console is priting the righ calculation but the page isn't showing the updated version
 
-// problem is updating the UI 
-// react reacts to variables on updation ( ui control)
-// to control this updation of data we use hooks
+  // console is priting the righ calculation but the page isn't showing the updated version
 
+  // problem is updating the UI
+  // react reacts to variables on updation ( ui control)
+  // to control this updation of data we use hooks
 
   return (
     <>
